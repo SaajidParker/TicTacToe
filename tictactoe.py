@@ -38,7 +38,7 @@ label.pack(side="top")
 
 #Creating reset button
 reset_button = Button(text="Restart", font=('consolas', 20), command=new_game)
-reset_button.pack(side="top")
+reset_button.pack(side="bottom")
 
 #Creating a frame for a window
 frame = Frame(window)
