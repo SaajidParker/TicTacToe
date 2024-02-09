@@ -29,7 +29,12 @@ button = [[0,0,0],
           [0,0,0],
           [0,0,0]]
 
+#Label for player turn
 label = Label(text= player + "'s Turn", font =('consolas',40))
 label.pack(side="top")
+
+#Creating reset button
+reset_button = Button(text="Restart", font=('consolas',20), command=new_game)
+reset_button.pack(side="top")
 
 window.mainloop()
