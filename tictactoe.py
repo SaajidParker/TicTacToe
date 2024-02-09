@@ -46,6 +46,21 @@ def check_winner():
         if buttons[0][column]['text'] == buttons[1][column]['text'] == buttons[2][column]['text'] != "":
             return True
 
+    #Diagonal win conditions
+    if buttons[0][0]['text'] == buttons[1][1]['text'] == buttons[2][2]['text'] != "":
+        return True
+    
+    elif buttons[0][2]['text'] == buttons[1][1]['text'] == buttons[2][0]['text'] != "":
+        return True
+    
+    #Tie conditions
+    elif empty_spaces() is False:
+        return "Tie"
+    
+    else:
+        return False
+    
+
 def empty_spaces():
     pass
 
