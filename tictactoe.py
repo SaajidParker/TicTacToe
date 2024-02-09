@@ -34,7 +34,17 @@ def next_turn(row, column):
                 label.config(text=("Tie!"))
 
 def check_winner():
-    pass
+    
+    #Horizontal win conditions
+    for row in range(3):
+        if buttons[row][0]['text'] == buttons[row][1]['text'] == buttons[row][2]['text'] != "":
+            return True
+        
+
+    #Vertical win conditions
+    for column in range(3):
+        if buttons[0][column]['text'] == buttons[1][column]['text'] == buttons[2][column]['text'] != "":
+            return True
 
 def empty_spaces():
     pass
