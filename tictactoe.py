@@ -13,6 +13,10 @@ def empty_spaces():
 def new_game():
     pass
 
+#Creatiug a window
 window = Tk()
+
+#Window title
+window.title("TicTacToe")
 
 window.mainloop()
