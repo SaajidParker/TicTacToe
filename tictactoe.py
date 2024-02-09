@@ -24,7 +24,7 @@ players = ["X", "O"]
 #Selecting starter player
 player = random.choice(players)
 
-#Buttons for the grid
+#Buttons for the grid initializing them
 buttons = []
 for _ in range(3):
     row = []
