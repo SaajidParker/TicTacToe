@@ -29,4 +29,7 @@ button = [[0,0,0],
           [0,0,0],
           [0,0,0]]
 
+label = Label(text= player + "'s Turn", font =('consolas',40))
+label.pack(side="top")
+
 window.mainloop()
