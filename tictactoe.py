@@ -21,5 +21,12 @@ window.title("Tic-Tac-Toe")
 
 #Creating Players
 players = ["X","O"]
+#Selecting starter player
+player = random.choice(players)
+
+#Buttons for the grid
+button = [[0,0,0],
+          [0,0,0],
+          [0,0,0]]
 
 window.mainloop()
