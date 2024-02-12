@@ -73,7 +73,6 @@ def check_winner():
             for column in range(3):
                 buttons[row][column].config(bg="yellow")
         return "Tie"
-    
     else:
         return False
     
