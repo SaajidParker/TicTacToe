@@ -94,7 +94,7 @@ def empty_spaces():
 
 
 def new_game():
-    
+    #Resetting the game to a new game
     global player 
 
     player = random.choice(players)
