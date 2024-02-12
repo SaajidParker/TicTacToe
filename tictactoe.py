@@ -65,6 +65,7 @@ def empty_spaces():
     #Defining amount of spaces to check
     spaces = 9
     
+    #looping through the grid to check for empty spaces
     for row in range(3):
         for column in range(3):
             if buttons[row][column]['text'] != "":
