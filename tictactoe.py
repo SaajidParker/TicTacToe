@@ -60,6 +60,10 @@ def check_winner():
         return True
     
     elif buttons[0][2]['text'] == buttons[1][1]['text'] == buttons[2][0]['text'] != "":
+        buttons[0][2].config(bg="green")
+        buttons[1][1].config(bg="green")
+        buttons[2][2].config(bg="green")
+
         return True
     
     #Tie conditions
