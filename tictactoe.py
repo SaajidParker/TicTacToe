@@ -96,7 +96,7 @@ def empty_spaces():
 def new_game():
     #Resetting the game to a new game
     global player 
-
+    #Resetting the player to start
     player = random.choice(players)
 
     label.config(text=player+"'s turn")
