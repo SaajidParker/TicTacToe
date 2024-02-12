@@ -62,7 +62,7 @@ def check_winner():
     
 
 def empty_spaces():
-    
+    #Defining amount of spaces to check
     spaces = 9
     
     for row in range(3):
