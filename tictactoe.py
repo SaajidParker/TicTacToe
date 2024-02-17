@@ -142,4 +142,4 @@ for row in range(3):
                                       command=lambda row=row, column=column: next_turn(row, column))
         buttons[row][column].grid(row=row, column=column)
 
-window.mainloop()
+window.mainloop() 
