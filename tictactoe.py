@@ -65,14 +65,16 @@ def new_game():
 
 window = Tk()
 window.title("Tic-Tac-Toe")
+window.configure(bg="white")  # Set the background color of the window to white
 players = ["X", "O"]
 player = random.choice(players)
 
-label = Label(text=f"{player}'s Turn", font=('Comic Sans MS', 20))  # Change the font for the label to Comic Sans MS
+label = Label(text=f"{player}'s Turn", font=('Comic Sans MS', 20), bg="white")  # Set the background color of the label to white
 label.pack(side="top")
 
-reset_button = Button(text="Restart", font=('Arial', 12), command=new_game)
+reset_button = Button(text="Restart", font=('Comic Sans MS', 12, 'bold'), command=new_game, bg="lightgrey", fg="black", relief="raised")
 reset_button.pack(side="bottom", pady=10)
+
 
 frame = Frame(window, bg="beige")  # Set the background color of the frame
 frame.pack(padx=20, pady=20)  # Add padding around the frame
