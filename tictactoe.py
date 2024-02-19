@@ -1,5 +1,7 @@
 from tkinter import *
 import random
+import tkinter.messagebox
+from tkinter.tix import COLUMN
 
 def next_turn(row, column):
     global player
@@ -19,7 +21,7 @@ def next_turn(row, column):
             
             elif check_winner() == "Tie":
                 label.config(text=("Tie!"))
-        
+                tkinter.messagebox.showinfo("Tic Tac Toe","Match is Draw.")
         else:
             buttons[row][column]['text'] = player
 
@@ -29,10 +31,10 @@ def next_turn(row, column):
             
             elif check_winner() is True:
                 label.config(text=(players[1]+ " wins"))
-            
+
             elif check_winner() == "Tie":
                 label.config(text=("Tie!"))
-
+                tkinter.messagebox.showinfo("Tic Tac Toe","Match is Draw.")
 def check_winner():
     
     #Horizontal win conditions
