@@ -43,7 +43,6 @@ def check_winner():
         highlight_winner([buttons[0][2], buttons[1][1], buttons[2][0]])
         return True
     elif not empty_spaces():
-        highlight_tie()
         return "Tie"  # Returning "Tie" here if there's no winner
     return False
 
@@ -51,11 +50,6 @@ def check_winner():
 def highlight_winner(cells):
     for cell in cells:
         cell.config(bg="lightgreen")
-
-def highlight_tie():
-    for row in range(3):
-        for column in range(3):
-            buttons[row][column].config(bg="lightyellow")
 
 def empty_spaces():
     for row in range(3):
@@ -84,7 +78,7 @@ reset_button = Button(text="Restart", font=('Arial', 12), command=new_game)
 reset_button.pack(side="bottom", pady=10)
 
 frame = Frame(window, bg="lightblue")  # Set the background color of the frame
-frame.pack()
+frame.pack(padx=20, pady=20)  # Add padding around the frame
 
 buttons = []
 for row in range(3):
@@ -92,7 +86,7 @@ for row in range(3):
     for column in range(3):
         button = Button(frame, text="", font=('Arial', 20), width=5, height=2,
                         command=lambda row=row, column=column: next_turn(row, column),bg="white")
-        button.grid(row=row, column=column)
+        button.grid(row=row, column=column, padx=5, pady=5)  # Add padding around each button
         button_row.append(button)
     buttons.append(button_row)
 
