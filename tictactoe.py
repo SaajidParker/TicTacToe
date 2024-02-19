@@ -111,12 +111,11 @@ def new_game():
 
 #Creating a window
 window = Tk()
-
 #Window title
 window.title("Tic-Tac-Toe")
 #Creating a frame for a window
 frame = Frame(master = window)
-frame.pack()
+frame.pack(pady=10)
 
 #Creating Players
 players = ["X", "O"]
@@ -138,8 +137,6 @@ label.pack(side="top")
 #Creating reset button
 reset_button = Button(text="Restart", font=('consolas', 20), command=new_game)
 reset_button.pack(side="bottom")
-
-
 
 for row in range(3):
     for column in range(3):
