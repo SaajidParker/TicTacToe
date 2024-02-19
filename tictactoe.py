@@ -8,9 +8,9 @@ def next_turn(row, column):
     if buttons[row][column]['text'] == "" and not check_winner():
         buttons[row][column]['text'] = player
         if player == "X":
-            buttons[row][column].config(bg="lightblue")  # Change background color to light blue for X
+            buttons[row][column].config(bg="lightblue", font=('Comic Sans MS', 20))  # Change font for X to Comic Sans MS
         elif player == "O":
-            buttons[row][column].config(bg="lightcoral")  # Change background color to light red for O
+            buttons[row][column].config(bg="lightcoral", font=('Comic Sans MS', 20))  # Change font for O to Comic Sans MS
         
         winner = check_winner()  # Store the result of check_winner() in a variable
 
@@ -71,7 +71,7 @@ window.title("Tic-Tac-Toe")
 players = ["X", "O"]
 player = random.choice(players)
 
-label = Label(text=f"{player}'s Turn", font=('Helvetica', 20))  # Change the font to Helvetica
+label = Label(text=f"{player}'s Turn", font=('Comic Sans MS', 20))  # Change the font for the label to Comic Sans MS
 label.pack(side="top")
 
 reset_button = Button(text="Restart", font=('Arial', 12), command=new_game)
@@ -84,7 +84,7 @@ buttons = []
 for row in range(3):
     button_row = []
     for column in range(3):
-        button = Button(frame, text="", font=('Arial', 20), width=5, height=2,
+        button = Button(frame, text="", font=('Comic Sans MS', 20), width=5, height=2,
                         command=lambda row=row, column=column: next_turn(row, column),bg="white")
         button.grid(row=row, column=column, padx=5, pady=5)  # Add padding around each button
         button_row.append(button)
