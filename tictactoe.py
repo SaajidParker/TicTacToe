@@ -18,7 +18,8 @@ def next_turn(row, column):
             
             elif check_winner() is True:
                 label.config(text=(players[0]+ " wins"))
-            
+                tkinter.messagebox.showinfo("Tic Tac Toe","Winner is "+players[0])
+                
             elif check_winner() == "Tie":
                 label.config(text=("Tie!"))
                 tkinter.messagebox.showinfo("Tic Tac Toe","Match is Draw.")
@@ -31,10 +32,11 @@ def next_turn(row, column):
             
             elif check_winner() is True:
                 label.config(text=(players[1]+ " wins"))
-
+                tkinter.messagebox.showinfo("Tic Tac Toe","Winner is "+players[1])
             elif check_winner() == "Tie":
                 label.config(text=("Tie!"))
                 tkinter.messagebox.showinfo("Tic Tac Toe","Match is Draw.")
+
 def check_winner():
     
     #Horizontal win conditions
