@@ -1,5 +1,4 @@
 from tkinter import *
-import tkinter.messagebox
 import random
 
 def next_turn(row, column):
@@ -14,16 +13,13 @@ def next_turn(row, column):
         
         winner = check_winner()  # Store the result of check_winner() in a variable
 
-        if winner:
-            label.config(text=f"{player} wins")
-            tkinter.messagebox.showinfo("Tic Tac Toe", f"Winner is {player}")
-        elif winner == "Tie":
+        if winner == "Tie":
             label.config(text="Match is Draw!")  # Update label text for tie
-            tkinter.messagebox.showinfo("Tic Tac Toe", "Match is Draw.")
+        elif winner:
+            label.config(text=f"{player} wins")
         else:
             player = players[1] if player == players[0] else players[0]
             label.config(text=f"{player}'s turn")
-
 
 def check_winner():
     for row in range(3):
@@ -42,8 +38,9 @@ def check_winner():
     elif buttons[0][2]['text'] == buttons[1][1]['text'] == buttons[2][0]['text'] != "":
         highlight_winner([buttons[0][2], buttons[1][1], buttons[2][0]])
         return True
-    elif not empty_spaces():
-        return "Tie"  # Returning "Tie" here if there's no winner
+
+    if not empty_spaces():  # Check if there are no empty spaces left on the board
+        return "Tie"  # Return "Tie" only if there's no winner and no empty spaces
     return False
 
 
