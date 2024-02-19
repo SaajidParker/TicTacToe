@@ -114,6 +114,9 @@ window = Tk()
 
 #Window title
 window.title("Tic-Tac-Toe")
+#Creating a frame for a window
+frame = Frame(master = window)
+frame.pack()
 
 #Creating Players
 players = ["X", "O"]
@@ -136,14 +139,12 @@ label.pack(side="top")
 reset_button = Button(text="Restart", font=('consolas', 20), command=new_game)
 reset_button.pack(side="bottom")
 
-#Creating a frame for a window
-frame = Frame(window)
-frame.pack()
+
 
 for row in range(3):
     for column in range(3):
-        buttons[row][column] = Button(frame, text="", font=('consolas', 40), width=5, height=2,
+        buttons[row][column] = Button(frame, text="", font=('consolas', 40), width=10, height=5,
                                       command=lambda row=row, column=column: next_turn(row, column))
-        buttons[row][column].grid(row=row, column=column)
+        buttons[row][column].grid(row=row, column=column, padx =5, pady=5)
 
 window.mainloop() 
