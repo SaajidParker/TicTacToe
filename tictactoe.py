@@ -64,6 +64,7 @@ def new_game():
             buttons[row][column].config(text="", bg="SystemButtonFace")
 
 window = Tk()
+window.configure(bg='')
 window.title("Tic-Tac-Toe")
 players = ["X", "O"]
 player = random.choice(players)
@@ -75,8 +76,9 @@ reset_button = Button(text="Restart", font=('Arial', 12), command=new_game)
 reset_button.pack(side="bottom", pady=10)
 
 
-frame = Frame(window)
+frame = Frame(window, bg="lightblue")  # Set the background color of the frame
 frame.pack()
+
 
 buttons = []
 for row in range(3):
