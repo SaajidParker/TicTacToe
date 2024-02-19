@@ -71,13 +71,13 @@ window.title("Tic-Tac-Toe")
 players = ["X", "O"]
 player = random.choice(players)
 
-label = Label(text=f"{player}'s Turn", font=('Arial', 20))
+label = Label(text=f"{player}'s Turn", font=('Helvetica', 20))  # Change the font to Helvetica
 label.pack(side="top")
 
 reset_button = Button(text="Restart", font=('Arial', 12), command=new_game)
 reset_button.pack(side="bottom", pady=10)
 
-frame = Frame(window, bg="lightblue")  # Set the background color of the frame
+frame = Frame(window, bg="beige")  # Set the background color of the frame
 frame.pack(padx=20, pady=20)  # Add padding around the frame
 
 buttons = []
