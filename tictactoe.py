@@ -7,15 +7,23 @@ def next_turn(row, column):
 
     if buttons[row][column]['text'] == "" and not check_winner():
         buttons[row][column]['text'] = player
-        if check_winner():
+        if player == "X":
+            buttons[row][column].config(bg="lightblue")  # Change background color to light blue for X
+        elif player == "O":
+            buttons[row][column].config(bg="lightcoral")  # Change background color to light red for O
+        
+        winner = check_winner()  # Store the result of check_winner() in a variable
+
+        if winner:
             label.config(text=f"{player} wins")
             tkinter.messagebox.showinfo("Tic Tac Toe", f"Winner is {player}")
-        elif check_winner() == "Tie":
-            label.config(text="Tie!")
+        elif winner == "Tie":
+            label.config(text="Match is Draw!")  # Update label text for tie
             tkinter.messagebox.showinfo("Tic Tac Toe", "Match is Draw.")
         else:
             player = players[1] if player == players[0] else players[0]
             label.config(text=f"{player}'s turn")
+
 
 def check_winner():
     for row in range(3):
@@ -36,8 +44,9 @@ def check_winner():
         return True
     elif not empty_spaces():
         highlight_tie()
-        return "Tie"
+        return "Tie"  # Returning "Tie" here if there's no winner
     return False
+
 
 def highlight_winner(cells):
     for cell in cells:
@@ -64,7 +73,6 @@ def new_game():
             buttons[row][column].config(text="", bg="SystemButtonFace")
 
 window = Tk()
-window.configure(bg='')
 window.title("Tic-Tac-Toe")
 players = ["X", "O"]
 player = random.choice(players)
@@ -75,17 +83,15 @@ label.pack(side="top")
 reset_button = Button(text="Restart", font=('Arial', 12), command=new_game)
 reset_button.pack(side="bottom", pady=10)
 
-
 frame = Frame(window, bg="lightblue")  # Set the background color of the frame
 frame.pack()
-
 
 buttons = []
 for row in range(3):
     button_row = []
     for column in range(3):
         button = Button(frame, text="", font=('Arial', 20), width=5, height=2,
-                        command=lambda row=row, column=column: next_turn(row, column))
+                        command=lambda row=row, column=column: next_turn(row, column),bg="white")
         button.grid(row=row, column=column)
         button_row.append(button)
     buttons.append(button_row)
